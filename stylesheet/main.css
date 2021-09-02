@@ -1,0 +1,16 @@
+body {
+    background-color: #573BA3;
+}
+#spinner {
+    display: none;
+}
+.card {
+    background-color: blanchedalmond;
+    border: 2px solid burlywood;
+    border-radius: 20px;
+}
+.heading {
+    color: crimson;
+    font-weight: 700;
+}
+    

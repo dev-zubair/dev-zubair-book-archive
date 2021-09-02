@@ -1,15 +1,22 @@
 const searchField = document.getElementById('search-field');
 const booksContainer = document.getElementById('books-container');
+const bookDetails = document.getElementById('book-details');
 
 const toggleSpinner = displayStyle => {
     document.getElementById('spinner').style.display = displayStyle;
 }
-
 // Search Book 
 const searchBooks = () => {
     //Display spinner
     toggleSpinner('block');
     const searchText = searchField.value;
+    if (searchText === '') {
+        toggleSpinner('none');
+        booksContainer.innerHTML = '';
+        bookDetails.innerHTML = '';
+        bookDetails.innerHTML = `<h3 class="text-light">Sorry! You have to write book names</h3>`;
+        return;
+    }
     // clear data 
     searchField.value = '';
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
@@ -20,9 +27,10 @@ const searchBooks = () => {
 const displayBooks = books => {
     // books filter 
     const booksArr = books.filter(one => one.cover_i !== undefined && one.author_name !== undefined && one.publisher !== undefined && one.publish_date !== undefined && one.publish_year !== undefined);
-    const bookDetails = document.getElementById('book-details');
+
     if (booksArr.length === 0) {
-        bookDetails.innerHTML = `<h3 class="text-light">No result Found</h3>`;
+
+        bookDetails.innerHTML = `<h3 class="text-light">Sorry! We have not found any book</h3>`;
         booksContainer.innerHTML = '';
     }
     else {
