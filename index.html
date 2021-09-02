@@ -10,58 +10,57 @@
     <!-- bootstrap link  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-
     <style>
+        body {
+            background-color: #573BA3;
+        }
+
         #spinner {
             display: none;
+        }
+
+        .card {
+            background-color: blanchedalmond;
+            border: 2px solid burlywood;
+            border-radius: 20px;
+        }
+
+        .heading {
+            color: crimson;
+            font-weight: 700;
         }
     </style>
 </head>
 
 <body>
     <main>
+        <!-- search  -->
         <section class="container mt-5">
-            <h1 class="text-center m-5">Book Archive API</h1>
+            <h1 class="text-center m-5 text-light">Welcome Zubair Bookstores.<br>
+                Shop Online with Your Satisfiction.</h1>
             <div class="input-group mb-3 w-50 mx-auto">
                 <input id="search-field" type="text" class="form-control" placeholder="Search The Books You Want"
                     aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button onclick="searchBooks()" class="btn btn-primary active w-auto data-bs-toggle=" type="button"
-                    id="button-search">Button</button>
+                    id="button-search">Search Book</button>
             </div>
             <!-- spinner  -->
-            <div id="spinner">
-                loding
+            <div id="spinner" class="mx-auto spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
 
-            <div id="book-details">
-
+            <!-- books number -->
+            <div class="text-center" id="book-details">
+            </div>
+            <!-- Header Image  -->
+            <div>
+                <img class="img-fluid" src="./assets/bg-image.jpg" alt="">
             </div>
         </section>
-
-
         <!-- card section  -->
         <section class="container mt-5">
-            <!-- old  -->
-            <!-- <div id="books-container" class="row row-cols-1 row-cols-md-3 g-4"></div> -->
-
-
-            <!-- new  -->
-
             <div id="books-container" class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- <div class="col">
-                    <div class="card h-100">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-                </div> -->
-
             </div>
-
         </section>
     </main>
 
